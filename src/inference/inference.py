@@ -18,7 +18,7 @@ class Inference:
         self.model.load_state_dict(checkpoint['model'], strict=False)
         self.model.eval()  # Eval mode
 
-        self.tokenizer = BertTokenizerFast.from_pretrained('bert-base-cased')
+        self.tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 
     def perform_coreference(self, doc, doc_key="nw", num_sents=None):
         if isinstance(doc, str) or isinstance(doc, list):
